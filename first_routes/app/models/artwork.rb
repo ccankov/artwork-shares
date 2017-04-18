@@ -22,4 +22,10 @@ class Artwork < ApplicationRecord
     foreign_key: :artwork_id,
     class_name: :Comment,
     dependent: :destroy
+
+  has_many :likes, as: :likeable,
+    primary_key: :id,
+    foreign_key: :likeable_id,
+    class_name: "Like"
+
 end
